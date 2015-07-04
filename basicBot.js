@@ -1775,6 +1775,58 @@
                 }
             },
             
+            lopsCommand: {
+                command: 'xLops',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.lops)
+                    }
+                }
+            },
+            
+            abeleCommand: {
+                command: 'Abeliitee.',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.abele)
+                    }
+                }
+            },
+            
+            metalCommand: {
+                command: 'metal',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.metal)
+                    }
+                }
+            },
+            
+             dzobyCommand: {
+                command: 'dzoby',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.dzoby)
+                    }
+                }
+            },
+            
             mmCommand: {
                 command: 'm1',
                 rank: 'user',
