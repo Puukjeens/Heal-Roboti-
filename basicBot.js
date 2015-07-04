@@ -1749,15 +1749,15 @@
                 }
             },
             
-             puukjeensCommand: {
-                command: 'Puukjeens',
+             vimiCommand: {
+                command: 'Vimi',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.puukjeens)
+                        API.sendChat(basicBot.chat.vimi)
                     }
                 }
             },
@@ -1797,6 +1797,32 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         API.sendChat(basicBot.chat.heal)
+                    }
+                }
+            },
+            
+               dotaCommand: {
+                command: 'dota',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.dota)
+                    }
+                }
+            },
+            
+            csgoCommand: {
+                command: 'csgo',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.csgo)
                     }
                 }
             },
