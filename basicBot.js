@@ -1774,6 +1774,46 @@
                     }
                 }
             },
+            
+             healCommand: {
+                command: 'heal',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.heal)
+                    }
+                }
+            },
+            
+            aizvesturiskaisCommand: {
+                command: 'Aizvesturiskais',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.aizvesturiskais)
+                    }
+                }
+            },
+
+sexCommand: {
+                command: 'sex',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.sex)
+                    }
+                }
+            },
+
 
             blacklistCommand: {
                 command: ['blacklist', 'bl'],
