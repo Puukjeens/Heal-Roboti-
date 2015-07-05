@@ -2088,13 +2088,13 @@ sexCommand: {
                 }
             },
 
-            cookieCommand: {
-                command: 'cookie',
+            wootCommand: {
+                command: 'woot',
                 rank: 'user',
                 type: 'startsWith',
                 getCookie: function (chat) {
-                    var c = Math.floor(Math.random() * basicBot.chat.cookies.length);
-                    return basicBot.chat.cookies[c];
+                    var c = Math.floor(Math.random() * basicBot.chat.woot.length);
+                    return basicBot.chat.meh[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2123,6 +2123,8 @@ sexCommand: {
                     }
                 }
             },
+            
+          
 
             cycleCommand: {
                 command: 'cycle',
