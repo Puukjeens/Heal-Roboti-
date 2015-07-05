@@ -2094,7 +2094,7 @@ sexCommand: {
                 type: 'startsWith',
                 getCookie: function (chat) {
                     var c = Math.floor(Math.random() * basicBot.chat.woot.length);
-                    return basicBot.chat.meh[c];
+                    return basicBot.chat.woot[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
