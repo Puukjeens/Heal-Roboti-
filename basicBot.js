@@ -1784,7 +1784,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke, {name: chat.un}));
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.wc, {name: chat.un}));
                         var name = msg.substring(cmd.length + 2);
                         var user = basicBot.userUtilities.lookupUserName(name);
                         if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
@@ -1796,8 +1796,8 @@
                 }
             },
             
-             w2Command: {
-                command: 'wc',
+             wc2Command: {
+                command: 'wc2',
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -1805,7 +1805,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke, {name: chat.un}));
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.wc2, {name: chat.un}));
                         var name = msg.substring(cmd.length + 2);
                         var user = basicBot.userUtilities.lookupUserName(name);
                         if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
@@ -1813,6 +1813,21 @@
                         var time = Date.now() - join;
                         var timeString = basicBot.roomUtilities.msToStr(time);
                         API.sendChat(subChat(basicBot.chat.jointime, {namefrom: chat.un, username: name, time: timeString}));
+                    }
+                }
+            },
+            
+            smokeCommand: {
+                command: 'smoke',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke));
+                     
                     }
                 }
             },
