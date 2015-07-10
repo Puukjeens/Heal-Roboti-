@@ -1826,7 +1826,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke));
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke, {name: chat.un}));
                      
                     }
                 }
