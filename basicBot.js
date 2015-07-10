@@ -1775,6 +1775,74 @@
                 }
             },
             
+            wcCommand: {
+                command: 'wc',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke, {name: chat.un}));
+                        var name = msg.substring(cmd.length + 2);
+                        var user = basicBot.userUtilities.lookupUserName(name);
+                        if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
+                        var join = basicBot.userUtilities.getJointime(user);
+                        var time = Date.now() - join;
+                        var timeString = basicBot.roomUtilities.msToStr(time);
+                        API.sendChat(subChat(basicBot.chat.jointime, {namefrom: chat.un, username: name, time: timeString}));
+                    }
+                }
+            },
+            
+             w2Command: {
+                command: 'wc',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length === cmd.length) return API.sendChat(subChat(basicBot.chat.smoke, {name: chat.un}));
+                        var name = msg.substring(cmd.length + 2);
+                        var user = basicBot.userUtilities.lookupUserName(name);
+                        if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
+                        var join = basicBot.userUtilities.getJointime(user);
+                        var time = Date.now() - join;
+                        var timeString = basicBot.roomUtilities.msToStr(time);
+                        API.sendChat(subChat(basicBot.chat.jointime, {namefrom: chat.un, username: name, time: timeString}));
+                    }
+                }
+            },
+            
+             hashCommand: {
+                command: 'Hash',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.hash)
+                    }
+                }
+            },
+            
+            rusCommand: {
+                command: 'rus',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.rus)
+                    }
+                }
+            },
+            
             exoCommand: {
                 command: 'Exorcist',
                 rank: 'user',
