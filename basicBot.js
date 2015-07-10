@@ -2940,7 +2940,7 @@ sexCommand: {
 
             motdCommand: {
                 command: 'motd',
-                rank: 'bouncer',
+                rank: 'mod',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -3204,7 +3204,7 @@ sexCommand: {
 
             rouletteCommand: {
                 command: 'roulette',
-                rank: 'cohost',
+                rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
