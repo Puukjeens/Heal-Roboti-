@@ -15,7 +15,7 @@
         if(typeof id === 'undefined' || id === null){
             id = API.getUser().id;
         }
-        var wl = API.getWaitList();
+        var wl = API.getWaitList();da
         for(var i = 0; i < wl.length; i++){
             if(wl[i].id === id){
                 return i;
