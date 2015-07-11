@@ -1772,19 +1772,7 @@ wcp
                 }
             },
             
-            sexyCommand: {
-                command: 'sexy',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                    	var ling = "https://www.youtube.com/watch?v=JGCsyshUU-A";
-                        API.sendChat(subChat(basicBot.chat.sexy, {link: ling}));
-                    }
-                }
-            },
+       
             
             weedCommand: {
                 command: 'weed',
