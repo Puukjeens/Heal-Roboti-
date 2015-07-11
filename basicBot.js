@@ -1774,8 +1774,7 @@
                 }
             },
             
-             var linkToSong = "http://youtu.be/" + media.cid;
-                                API.sendChat(subChat(basicBot.chat.songlink, {name: from, link: linkToSong}));
+           
                                 
           sexyCommand: {
                 command: 'sexy',
