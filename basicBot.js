@@ -251,9 +251,9 @@
             language: "english",
             chatLink: "https://rawgit.com/Puukjeens/Heal-Roboti-S-kums/master/lang/en.json",
             roomLock: false, // Requires an extension to re-load the script
-            startupCap: 1, // 1-200
+            startupCap: 69, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupEmoji: true, // true or false
             autowoot: true,
             smartSkip: true,
             cmdDeletion: true,
