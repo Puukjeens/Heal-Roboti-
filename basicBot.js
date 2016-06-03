@@ -1722,7 +1722,7 @@
             },
 
             ballCommand: {
-                command: ['8ball', 'ask'],
+                command: ['Vai', 'ask'],
                 rank: 'user',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -1733,9 +1733,9 @@
                             var msg = chat.message;
                             var argument = msg.substring(cmd.length + 1).replace(/@/g, '');
                             var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomBall = Math.floor(Math.random() * basicBot.chat.balls.length);
+                            var randomBall = Math.floor(Math.random() * basicBot.chat.vai.length);
                             var randomSentence = Math.floor(Math.random() * 1);
-                            API.sendChat(subChat(basicBot.chat.ball, {name: chat.un, botname: basicBot.settings.botName, question: argument, response: basicBot.chat.balls[randomBall]}));
+                            API.sendChat(subChat(basicBot.chat.ball, {name: chat.un, botname: basicBot.settings.botName, question: argument, response: basicBot.chat.vai[randomBall]}));
                      }
                 }
             },
